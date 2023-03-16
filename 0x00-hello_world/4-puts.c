@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  *main - main entry point
- *description: 'the programs description'
+ *description: 'A program that prints a linewith the put function'
  *return: always 0 (success)
  */
 int main(void)
