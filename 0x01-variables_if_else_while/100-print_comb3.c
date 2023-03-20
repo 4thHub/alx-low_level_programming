@@ -5,20 +5,21 @@
  */
 int main(void)
 {
-	int n, m;
+	int a, b;
 
-	for (n = 47; m <= 56; m++)
+	for (a = 0; a < 9; a++)
 	{
-		if (m > n)
+		for (b = a + 1; b < 10; b++)
 		{
-			putchar (n);
-			putchar (n);
-			if (n != 56 || m != 57)
-			{
-				putchar (',');
-				putchar (' ');
-			}
+			putchar((a % 10) + '0');
+			putchar((b % 10) + '0');
+
+			if (a == 8 && b == 9)
+				continue;
+			putchar(',');
+			putchar(' ');
 		}
 	}
-	putchar ('\n');
+	putchar('\n');
 	return (0);
+}
