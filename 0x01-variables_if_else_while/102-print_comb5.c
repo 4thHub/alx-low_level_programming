@@ -5,24 +5,26 @@
   */
 int main(void)
 {
-	int i, j;
+	int a, b;
 
-	for (j = 0; j < 100; j++)
+	for (a = 0; a <= 98; a++)
 	{
-		if (i < j)
+		for (b = a + 1; b <= 99; b++)
 		{
-			putchar ((i / 10) + 48);
-			putchar ((i % 10) + 48);
-			putchar (' ');
-			putchar ((j / 10) + 48);
-			putchar ((j % 10) + 48);
-			if (i != 98 || j != 97)
-			{
-				putchar (',');
-				putchar (' ');
-			}
+			putchar((a / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar(' ');
+			putchar((b / 10) + '0');
+			putchar((b % 10) + '0');
+
+			if (a == 98 && b == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar ('\n');
+
 	return (0);
 }
