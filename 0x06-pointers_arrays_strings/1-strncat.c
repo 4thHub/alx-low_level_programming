@@ -14,7 +14,7 @@ char *_strncat(char *gift, char *vvm, int x)
 	int b;
 
 	a = 0;
-	while (dest[a] != '\0')
+	while (gift[a] != '\0')
 	{
 		a++;
 	}
