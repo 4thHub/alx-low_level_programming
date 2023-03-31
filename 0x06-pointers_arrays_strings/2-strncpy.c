@@ -11,7 +11,7 @@ char *_strncpy(char *gift, char *vvm, int x)
 {
 	int a;
 
-	j = 0;
+	a = 0;
 	while (a < x && vvm[a] != '\0')
 	{
 		gift[a] = vvm[a];
@@ -19,9 +19,9 @@ char *_strncpy(char *gift, char *vvm, int x)
 	}
 	while (a < x)
 	{
-		dest[j] = '\0';
+		dest[a] = '\0';
 		a++;
 	}
 
-	return (gift);
+	return (dest);
 }

@@ -11,15 +11,15 @@ char *_strcat(char *gift, char *vvm)
 	int a;
 	int b;
 
-	i = 0;
+	a = 0;
 	while (gift[a] != '\0')
 	{
 		a++;
 	}
-	j = 0;
+	b = 0;
 	while (vvm[b] != '\0')
 	{
-		gift[a] = src[b];
+		gift[a] = vvm[b];
 		a++;
 		b++;
 	}

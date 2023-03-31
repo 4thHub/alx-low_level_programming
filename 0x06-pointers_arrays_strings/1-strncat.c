@@ -19,7 +19,7 @@ char *_strncat(char *gift, char *vvm, int x)
 		a++;
 	}
 	b = 0;
-	while (b < x && src[b] != '\0')
+	while (b < x && vvm[b] != '\0')
 	{
 	gift[a] = vvm[b];
 	a++;
