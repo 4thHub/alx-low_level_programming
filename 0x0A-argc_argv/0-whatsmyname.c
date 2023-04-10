@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include "main.h"
-
-int main(int nameprint __attribute((unused)), char *argv[])
+/**
+ *main - point of entry
+ *@argc: the total  number of arguments
+ *@argv: the array of arguments
+ */
+int main(int argc __attribute((unused)), char *argv[])
 {
 	printf("%s\n", *argv);
 	return (0);
