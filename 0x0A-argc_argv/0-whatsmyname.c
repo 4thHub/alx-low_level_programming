@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include "main.h"
 
-int main()
+int namemyself();
+
+int main(void)
 {
-	int namemyself();
+	namemyself();
 	return (0);
 }
-
 int namemyself(char *argv[])
 {
 	printf("%s", *argv);
