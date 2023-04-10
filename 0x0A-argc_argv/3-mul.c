@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include "main.h"
 /**
- *main - Point of entry
- *description: print the result of the multiplication of two numbers
- *@argc: the number of arguement
- *@argv: The array of the arguement
- *Return: 0 || 12
+ *_atoi - function to covert string to number
+ *@s: The string to be converted to number
+ *Return: y, the number gotten from the conversion
  */
 int _atoi(char *s)
 {
@@ -15,6 +13,7 @@ int _atoi(char *s)
 	int len = 0;
 	int z = 0;
 	int tom = 0;
+
 	while (s[len] != '\0')
 		len++;
 	while (i < len && z == 0)
@@ -40,7 +39,13 @@ int _atoi(char *s)
 	}
 	return (y);
 }
-
+/**
+ * main - point of entry
+ *description: Print the multiple of two numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: 0 || 1
+ */
 int main(int argc, char *argv[])
 {
 	int mul;
@@ -54,9 +59,7 @@ int main(int argc, char *argv[])
 		mul = input1 * input2;
 		printf("%d\n", mul);
 		return (0);
-	} else
-	{
-		printf("Error\n");
-		return (1);
 	}
+	printf("Error\n");
+	return (1);
 }
