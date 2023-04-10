@@ -1,13 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 
-int main()
-{
-	int namemyself();
-	return (0);
-}
-
-int namemyself(char *argv[])
+int main(int nameprint __attribute((unused)), char *argv[])
 {
 	printf("%s\n", *argv);
 	return (0);
