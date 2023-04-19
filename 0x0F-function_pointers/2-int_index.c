@@ -3,9 +3,9 @@
 /**
  *int_index - searches for an integer
  *@array: array parameter in function
- *@sixe: lenght of array
+ *@size: lenght of array
  *@cmp: pointer to the function
- *@Return: void
+ *Return: void
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
@@ -18,5 +18,5 @@ int int_index(int *array, int size, int (*cmp)(int))
 		if (cmp(array[i]))
 			return (i);
 	}
-	return(-1);
+	return (-1);
 }
