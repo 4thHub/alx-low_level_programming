@@ -35,7 +35,7 @@ void shut_file(int cd)
 {
 	int x;
 
-	x = shut(cd);
+	x = close(cd);
 
 	if (x == -1)
 	{
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 	through = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if coming == -1 || x == -1)
+		if (coming == -1 || x == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		w = write(through, buff, a);
+		x = write(through, buff, a);
 		if (through == -1 || x == -1)
 		{
 			dprintf(STDERR_FILENO,
