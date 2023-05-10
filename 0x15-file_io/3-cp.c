@@ -2,16 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *make_buff(char *page);
+char *make_buff(char *tab);
 void shut_file(int cd);
 
 /**
  * make_buff - Allocates 1024 bytes for a buffer.
- * @page: The name of the file buffer is storing chars for.
+ * @tab: The name of the file buffer is storing chars for.
  *
  * Return: A pointer to the newly-allocated buffer.
  */
-char *make_buff(char *page)
+char *make_buff(char *tab)
 {
 	char *buff;
 
@@ -20,7 +20,7 @@ char *make_buff(char *page)
 	if (buff == NULL)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", page);
+			"Error: Can't write to %s\n", tab);
 		exit(99);
 	}
 
@@ -52,13 +52,13 @@ void shut_file(int cd)
  * Return: 0 on success.
  *
  * Description: If the argument count is incorrect - exit code 97.
- *              If file_from does not exist or cannot be read - exit code 98.
- *              If file_to cannot be created or written to - exit code 99.
- *              If file_to or file_from cannot be closed - exit code 100.
+ * If file_from does not exist or cannot be read - exit code 98.
+ * If file_to cannot be created or written to - exit code 99.
+ * If file_to or file_from cannot be closed - exit code 100.
  */
 int main(int argc, char *argv[])
 {
-	int coming, through, a, x;
+	int from, through, a, x;
 	char *buff;
 
 	if (argc != 3)
@@ -68,12 +68,12 @@ int main(int argc, char *argv[])
 	}
 
 	buff = make_buff(argv[2]);
-	through = open(argv[1], O_RDONLY);
-	a = read(coming, buff, 1024);
+	from = open(argv[1], O_RDONLY);
+	a = read(from, buff, 1024);
 	through = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (coming == -1 || x == -1)
+		if (from == -1 || a == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
@@ -90,13 +90,13 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		a = read(coming, buff, 1024);
+		a = read(from, buff, 1024);
 		through = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (a > 0);
 
 	free(buff);
-	shut_file(coming);
+	shut_file(from);
 	shut_file(through);
 
 	return (0);
